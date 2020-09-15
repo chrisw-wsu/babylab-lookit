@@ -5,6 +5,13 @@ Created on Wed Aug 12 10:32:25 2020
 
 @author: chris
 """
+from pydub import AudioSegment
+from glob import iglob
+import glob
+import os
+import fnmatch
+import json
+import time
 
 
 def addSilence(PATH_in, PATH_out, ToProcess): 
@@ -22,7 +29,7 @@ def addSilence(PATH_in, PATH_out, ToProcess):
 
         #word = AudioSegment.from_wav(each_mp3_fullDir)
 
-        silence_733ms = AudioSegment.silent(duration=733)
+        silence_733ms = AudioSegment.silent(duration = 733)
 
         word_with_silence = silence_733ms + word
 
